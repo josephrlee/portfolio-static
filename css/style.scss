@@ -1,0 +1,374 @@
+@import url("skeleton.css");
+
+/* Fonts  */
+@import url("fonts/fonts.css");
+
+// Varibles
+$body-background-color: #dfeaf3;
+$primary-color: #444;
+$link-color: #4fadc4;
+$case-study-background-color: #e6f5e5;
+$case-study-odd-background-color: #f7fff0;
+
+// Main Styles
+body {
+  background: $body-background-color;
+  color: $primary-color;
+}
+a {
+  transition: 0.3s;
+}
+img {
+  opacity: 0;
+  animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+img.visible {
+  opacity: 1;
+}
+.menu,
+.menu-bg,
+.menu-burger {
+  position: fixed;
+  font-size: 30px;
+  text-align: center;
+}
+.menu-bg {
+  background-color: rgba(white, .8);
+  pointer-events: none;
+  z-index: 21;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+  &.fs {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+  }
+}
+.menu-burger {
+  color: white;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: 0.4s ease;
+  top: 25px;
+  right: 25px;
+  text-shadow: rgba(black, 0.2) 0 -1px 0;
+  z-index: 2;
+  &.fs {
+    transform: rotate(-90deg);
+  }
+}
+.menu-items {
+  position: absolute;
+  font-weight: 700;
+  font-size: 5rem;
+  font-family: majesti, serif;
+  letter-spacing: 5px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: 0.4s ease;
+  margin-top: 100px;
+  transform: translateY(-100%);
+  pointer-events: none;
+  z-index: 22;
+  div {
+    transition: 1s;
+    opacity: 0;
+    margin-top: 0;
+     a {
+       text-decoration: none;
+       &:hover {
+         border-bottom: solid 3px #5BC7E3;
+       }
+     }
+  }
+  &.fs {
+    transform: translateY(0);
+    pointer-events: auto;
+    opacity: 1;
+    position: fixed;
+    div {
+      opacity: 1;
+      margin-top: 75px;
+    }
+  }
+}
+#about {
+  padding: 5% 0;
+  width: 100%;
+  position: relative !important;
+  h1 {
+    font-weight: 900;
+    font-size: 5rem;
+    font-family: majesti, serif;
+    text-shadow: 4px 4px 0 #D5E0E8;
+    a {
+      text-decoration: none;
+    }
+    .genericon {
+      margin-top: 3rem;
+    }
+  }
+  .more {
+    display: none;
+    text-align: center;
+    a {
+      font-size: 6rem;
+      animation: fade 2s infinite alternate;
+      -webkit-animation: fade 2s infinite alternate;
+      opacity: .8;
+    }
+    @keyframes fade {
+      from {
+        opacity: 0.1;
+      }
+    }
+    @-webkit-keyframes fade {
+      from {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+p {
+  font-size: 1.8rem;
+  font-weight: 100;
+  font-family: aleo, serif;
+  text-shadow: 0 -1px 2px rgba(white, 0.4);
+}
+#portrait {
+  overflow: hidden;
+  padding-top: 5%;
+  z-index: -2;
+  img {
+    width: 100%;
+  }
+}
+.case-study {
+  padding: 5rem 0;
+  background-color: $case-study-background-color;
+  border-bottom: solid 1px rgba($primary-color, .4);
+  &:nth-child(odd) {
+    background-color: $case-study-odd-background-color;
+  }
+  &:first-child {
+    border-top: solid 1px darken($body-background-color, 8%);
+  }
+  article {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 20;
+  }
+  h2 {
+    font-weight: bold;
+  }
+  .btn {
+    border: solid 1px $link-color;
+    font-family: majesti, serif;
+    padding: 1rem 4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    &:hover {
+      border-color: rgba($primary-color, 0.5);
+      color: $primary-color;
+    }
+  }
+  dl {
+    border: solid 1px rgba(black, 0.1);
+    border-left: none;
+    border-right: none;
+    padding: 2rem 0;
+    margin: 1em 0 3em;
+    opacity: 0.6;
+    transition: opacity 1s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  dt,
+  dd {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+  }
+  dt {
+    font-weight: bold;
+    width: 34%;
+  }
+  dd {
+    width: 64%;
+  }
+}
+#work img {
+  max-width: 100%;
+  border: solid 1px rgba(black, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 0 60px rgba(black, 0.1);
+  transition: ease 0.3s;
+  &:hover {
+    box-shadow: 0 0 60px rgba(black, 0.2);
+  }
+}
+.case-study .back-to-top {
+  text-align: center;
+  font-size: 1.6rem;
+}
+footer {
+  background-color: $body-background-color;
+  padding: 4rem 0 3rem;
+  p {
+    font-size: 2rem;
+  }
+  .colophon {
+    font-style: italic;
+    color: rgba($primary-color, 0.7);
+  }
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  #about {
+    width: 80%;
+  }
+  #portrait {
+    width: 80%;
+    img {
+      width: 60%;
+    }
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  header {
+    min-height: 100vh;
+  }
+  #about {
+    width: 45%;
+  }
+  #portrait {
+    width: 45%;
+    float: right;
+    top: 3rem;
+    position: absolute;
+    right: 0;
+    img {
+      width: 100%;
+      right: 0;
+    }
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1040px) {
+  #about {
+    width: 45%;
+    padding: 6% 0;
+    p {
+      font-size: 1.9rem;
+    }
+    .more {
+      display: block;
+    }
+  }
+  #portrait {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    max-width: 45%;
+    min-height: 600px;
+    img {
+      width: auto;
+      height: 100%;
+      float: right;
+      margin-right: -7vw;
+    }
+  }
+  .case-study article {
+    padding-top: 4rem;
+    padding-bottom: 0;
+    padding-right: 2%;
+    margin-left: 0;
+  }
+  .case-study aside {
+    margin-right: 0;
+    padding-top: 4rem;
+    float: right;
+  }
+  .case-study .btn {
+    width: 96%;
+  }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+  #about {
+    width: 40%;
+    padding: 8% 5%;
+  }
+  #portrait {
+    max-width: 50%;
+    min-height: 700px;
+    img {
+      width: auto;
+      height: 100%;
+      margin-right: 0;
+    }
+  }
+
+  // .case-study .btn {
+  //   width: 75%;
+  // }
+}

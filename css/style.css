@@ -1,0 +1,296 @@
+@import url("skeleton.css");
+/* Fonts  */
+@import url("fonts/fonts.css");
+body {
+  background: #dfeaf3;
+  color: #444; }
+
+a {
+  transition: 0.3s; }
+
+img {
+  opacity: 0;
+  animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -o-animation: fadein 1s; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-o-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+img.visible {
+  opacity: 1; }
+
+.menu,
+.menu-bg,
+.menu-burger {
+  position: fixed;
+  font-size: 30px;
+  text-align: center; }
+
+.menu-bg {
+  background-color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  z-index: 21;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s 0.5s; }
+  .menu-bg.fs {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s; }
+
+.menu-burger {
+  color: white;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: 0.4s ease;
+  top: 25px;
+  right: 25px;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0;
+  z-index: 2; }
+  .menu-burger.fs {
+    transform: rotate(-90deg); }
+
+.menu-items {
+  position: absolute;
+  font-weight: 700;
+  font-size: 5rem;
+  font-family: majesti, serif;
+  letter-spacing: 5px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: 0.4s ease;
+  margin-top: 100px;
+  transform: translateY(-100%);
+  pointer-events: none;
+  z-index: 22; }
+  .menu-items div {
+    transition: 1s;
+    opacity: 0;
+    margin-top: 0; }
+    .menu-items div a {
+      text-decoration: none; }
+      .menu-items div a:hover {
+        border-bottom: solid 3px #5BC7E3; }
+  .menu-items.fs {
+    transform: translateY(0);
+    pointer-events: auto;
+    opacity: 1;
+    position: fixed; }
+    .menu-items.fs div {
+      opacity: 1;
+      margin-top: 75px; }
+
+#about {
+  padding: 5% 0;
+  width: 100%;
+  position: relative !important; }
+  #about h1 {
+    font-weight: 900;
+    font-size: 5rem;
+    font-family: majesti, serif;
+    text-shadow: 4px 4px 0 #D5E0E8; }
+    #about h1 a {
+      text-decoration: none; }
+    #about h1 .genericon {
+      margin-top: 3rem; }
+  #about .more {
+    display: none;
+    text-align: center; }
+    #about .more a {
+      font-size: 6rem;
+      animation: fade 2s infinite alternate;
+      -webkit-animation: fade 2s infinite alternate;
+      opacity: .8; }
+@keyframes fade {
+  from {
+    opacity: 0.1; } }
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.1; } }
+p {
+  font-size: 1.8rem;
+  font-weight: 100;
+  font-family: aleo, serif;
+  text-shadow: 0 -1px 2px rgba(255, 255, 255, 0.4); }
+
+#portrait {
+  overflow: hidden;
+  padding-top: 5%;
+  z-index: -2; }
+  #portrait img {
+    width: 100%; }
+
+.case-study {
+  padding: 5rem 0;
+  background-color: #e6f5e5;
+  border-bottom: solid 1px rgba(68, 68, 68, 0.4); }
+  .case-study:nth-child(odd) {
+    background-color: #f7fff0; }
+  .case-study:first-child {
+    border-top: solid 1px #c1d7e8; }
+  .case-study article {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 20; }
+  .case-study h2 {
+    font-weight: bold; }
+  .case-study .btn {
+    border: solid 1px #4fadc4;
+    font-family: majesti, serif;
+    padding: 1rem 4rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block; }
+    .case-study .btn:hover {
+      border-color: rgba(68, 68, 68, 0.5);
+      color: #444; }
+  .case-study dl {
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-left: none;
+    border-right: none;
+    padding: 2rem 0;
+    margin: 1em 0 3em;
+    opacity: 0.6;
+    transition: opacity 1s; }
+    .case-study dl:hover {
+      opacity: 0.8; }
+  .case-study dt,
+  .case-study dd {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem; }
+  .case-study dt {
+    font-weight: bold;
+    width: 34%; }
+  .case-study dd {
+    width: 64%; }
+
+#work img {
+  max-width: 100%;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+  transition: ease 0.3s; }
+  #work img:hover {
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2); }
+
+.case-study .back-to-top {
+  text-align: center;
+  font-size: 1.6rem; }
+
+footer {
+  background-color: #dfeaf3;
+  padding: 4rem 0 3rem; }
+  footer p {
+    font-size: 2rem; }
+  footer .colophon {
+    font-style: italic;
+    color: rgba(68, 68, 68, 0.7); }
+
+/* Larger than mobile */
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  #about {
+    width: 80%; }
+
+  #portrait {
+    width: 80%; }
+    #portrait img {
+      width: 60%; } }
+/* Larger than tablet */
+@media (min-width: 750px) {
+  header {
+    min-height: 100vh; }
+
+  #about {
+    width: 45%; }
+
+  #portrait {
+    width: 45%;
+    float: right;
+    top: 3rem;
+    position: absolute;
+    right: 0; }
+    #portrait img {
+      width: 100%;
+      right: 0; } }
+/* Larger than desktop */
+@media (min-width: 1040px) {
+  #about {
+    width: 45%;
+    padding: 6% 0; }
+    #about p {
+      font-size: 1.9rem; }
+    #about .more {
+      display: block; }
+
+  #portrait {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    max-width: 45%;
+    min-height: 600px; }
+    #portrait img {
+      width: auto;
+      height: 100%;
+      float: right;
+      margin-right: -7vw; }
+
+  .case-study article {
+    padding-top: 4rem;
+    padding-bottom: 0;
+    padding-right: 2%;
+    margin-left: 0; }
+
+  .case-study aside {
+    margin-right: 0;
+    padding-top: 4rem;
+    float: right; }
+
+  .case-study .btn {
+    width: 96%; } }
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+  #about {
+    width: 40%;
+    padding: 8% 5%; }
+
+  #portrait {
+    max-width: 50%;
+    min-height: 700px; }
+    #portrait img {
+      width: auto;
+      height: 100%;
+      margin-right: 0; } }
+
+/*# sourceMappingURL=style.css.map */
